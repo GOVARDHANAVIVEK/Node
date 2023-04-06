@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TODO app</title>
+   
+    </head>
+<body>
+    <h2>TODO APP</h2>
+    <form name="form" class="form" >
+        <div class="itembox">Enter title:<input type="text" class="itemname" name="itemName" placeholder="enter new item" pattern="[a-z A-Z]*" title="only alphabets" minlength="3" maxlength="50" required> </div>  
+        <div class="btn">
+            <input type="submit" name="addbtn" value="add"  >
+            <input onclick="reset()" name="resetbtn" type="button" value="reset">
+        </div> 
+        
+        
+    </form>
+    <div id="todolist">
+        
+    </div>
+
+
+    <script >
+      let form = document.forms['form'].addEventListener('submit', addItem);
+        
+        let todo = document.getElementById('todolist');
+        
+        todo.addEventListener('click',removeItem);
+        
+        function addItem(){
+            event.preventDefault();
+          const itemName = document.forms["form"]['itemName'].value;
+          let itemDiv = document.createElement('div');
+          itemDiv.className="listItem"
+
+          let ptag = document.createElement('p'); 
+            ptag.className = "item"
+          let deleteBtn = document.createElement('button');
+          
+          deleteBtn.className="deleteItem"
+        
+          ptag.appendChild(document.createTextNode(`${itemName}`));
+        
+        
+          itemDiv.appendChild(ptag)
+         
+          deleteBtn.appendChild(document.createTextNode("X"));
+          itemDiv.appendChild(deleteBtn);
+
+          if(itemName === " "){
+            alert("please enter something");
+          }else{
+            document.getElementById('todolist').appendChild(itemDiv);
+            document.forms["form"]['itemName'].value="";
+          }
+          
+        }
+        
+        function removeItem(event){
+                event.preventDefault();
+                if(event.target.classList.contains('deleteItem')){
+                    let li = event.target.parentNode;
+                    todo.removeChild(li);
+                }
+        }
+        
+        
+        function reset(){
+        let name = document.forms['form']['name'];
+            if(name.value!=" "){
+                name.value="";
+            }
+        }
+     
+    </script>
+
+
+</body>
+</html>
