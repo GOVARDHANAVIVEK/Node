@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(230, 223, 135);
+    background-color: rgb(255, 255, 255);
     }
     h2{
         text-align: center;
@@ -13,7 +13,7 @@ body{
         margin: 10px auto;
         width: 30%;
         /* border: 1px solid; */
-        background-color: rgb(230, 223, 135);
+        background-color: rgb(255, 255, 255);
         font-size: 18px;
     }
     .itembox{
@@ -22,7 +22,7 @@ body{
         margin-bottom: 10px;
     }
     .itembox input{
-        width: 380px;
+        width: 125%;
         height:4vh;
         border: 1px solid;
         border-radius: 20px;
@@ -45,13 +45,13 @@ body{
 
     }
     .btn input:first-child{
-        background-color: rgb(45, 71, 71);
-        color: white;
+        background-color: rgb(158, 212, 228);
+        color: rgb(7, 7, 7);
     }
 
     .btn input:first-child:hover{
-        background-color: rgb(62, 221, 221);
-        color: rgb(2, 2, 2);
+        background-color: rgb(8, 134, 134);
+        color: rgb(231, 226, 226);
     }
     .btn input:last-child{
         background-color: rgb(134, 81, 1);
@@ -77,7 +77,7 @@ body{
         border: 2px solid rgb(7, 0, 0);
         border-radius: 20px;
         background-color: red;
-        color: rgb(243, 235, 235);
+        color: rgb(255, 255, 255);
         padding: 5px 10px;
         height: fit-content;
         border-style: none;
@@ -95,4 +95,11 @@ body{
     .item{
         padding: 4px 0px;
         font-size:26px;
+    }
+
+    p{
+        color: rgb(158, 58, 22);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+        
     }
